@@ -19,9 +19,9 @@ class CallReceiver : BroadcastReceiver() {
                 val format = extras.getString("format")
 
                 val smsMessage = if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    SmsMessage.createFromPdu(sms[1] as ByteArray, format)
+                    SmsMessage.createFromPdu(sms[i] as ByteArray, format)
                 } else {
-                    SmsMessage.createFromPdu(sms[1] as ByteArray)
+                    SmsMessage.createFromPdu(sms[i] as ByteArray)
                 }
 
                 val phone = smsMessage.originatingAddress
