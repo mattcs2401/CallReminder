@@ -7,7 +7,9 @@ import android.telephony.SmsMessage
 import android.widget.Toast
 import android.os.Build
 
-/* https://google-developer-training.gitbooks.io/android-developer-phone-sms-course/content/Lesson%202/2_p_2_sending_sms_messages.html */
+/* https://google-developer-training.github.io/android-developer-phone-sms-course/Lesson%202/2_p_2_sending_sms_messages.html
+ * https://code.tutsplus.com/tutorials/how-to-make-calls-and-use-sms-in-android-apps--cms-28168
+ */
 
 class CallReceiver : BroadcastReceiver() {
 
