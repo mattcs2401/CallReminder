@@ -10,17 +10,28 @@ class CallStateListener : PhoneStateListener() {
         
         when(state) {
             TelephonyManager.CALL_STATE_RINGING -> {
-                val bp = ""
+                isRinging = true
+                wasRinging = false
             }
             TelephonyManager.CALL_STATE_OFFHOOK -> {
-                val bp = ""
+                isRinging = false
+                wasRinging = true
             }
             TelephonyManager.CALL_STATE_IDLE -> {
-                val bp = ""
+                isRinging = false
+                if(wasRinging == false) {
+                    // was ringing but didn't go off hook.
+                    // get number and implement call manager for notification.
+                    // finally set wasRinging = true
+                    wasRinging = true
+                }
             }
             else -> {
-                val bp = ""
+                isRinging = false
             }
         }
     }
+
+    private var isRinging: Boolean = false
+    private var wasRinging: Boolean = false
 }

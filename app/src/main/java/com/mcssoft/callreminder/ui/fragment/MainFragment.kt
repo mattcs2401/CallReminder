@@ -11,6 +11,9 @@ import android.view.ViewGroup
 import com.mcssoft.callreminder.CallStateListener
 import com.mcssoft.callreminder.R
 
+/*
+https://github.com/google-developer-training/android-fundamentals-phone-sms
+ */
 class MainFragment: Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
