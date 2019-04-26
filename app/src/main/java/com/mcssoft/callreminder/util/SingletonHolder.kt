@@ -3,7 +3,9 @@ package com.mcssoft.callreminder.util
 /*
 From: https://medium.com/@BladeCoder/kotlin-singletons-with-argument-194ef06edd9e
 */
-
+/*
+For Kotlin singletons where you want to pass an arbitrary parameter (e.g. context) in the getInstance() method.
+*/
 open class SingletonHolder<out T, in A>(creator: (A) -> T) {
     private var creator: ((A) -> T)? = creator
     @Volatile private var instance: T? = null
