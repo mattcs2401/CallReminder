@@ -8,8 +8,10 @@ import com.mcssoft.callreminder.CallAlarmManager
 class AlarmReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action == "android.intent.action.BOOT_COMPLETED") {
-            CallAlarmManager.getInstance(context).setAlarm()
-        }
+        // Display notification about missed call.
+
+        val phoneNumber = intent.extras.getString("PHONE_NUMBER")
+
+        val bp = ""
     }
 }

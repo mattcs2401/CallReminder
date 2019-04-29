@@ -28,7 +28,7 @@ class MainFragment: Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        phoneListener = CallStateListener()
+        phoneListener = CallStateListener(activity!!.applicationContext)
         telephonyManager = activity?.getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
         telephonyManager.listen(phoneListener, PhoneStateListener.LISTEN_CALL_STATE)
     }
