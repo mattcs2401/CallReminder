@@ -24,7 +24,8 @@ class CallAlarmManager private constructor(context: Context) {
 
     fun setAlarm(phoneNumber: String) {
         val intent = Intent(context, AlarmReceiver::class.java)
-        intent.putExtra(Constants.KEY_PHONE_NUMBER, phoneNumber)
+        intent.putExtra(Constants.KEY_ALARM_TYPE, Constants.ALARM_TYPE_CALL)
+        intent.putExtra(Constants.KEY_PH_NO, phoneNumber)
 
         val alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
 

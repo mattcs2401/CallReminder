@@ -26,7 +26,7 @@ class CallStateListener(private var context: Context) : PhoneStateListener() {
                 // if ringing flag was set but not the off hook flag.
                 if(isRinging && !isOffHook) {
                     // start call alarm.
-                    CallAlarmManager.getInstance(context).setAlarm(Constants.TEST_PHONE_NUMBER)
+                    CallAlarmManager.getInstance(context).setAlarm(Constants.TEST_PH_NO)
 
                     // reset the ringing and off hook flags.
                     reset()
