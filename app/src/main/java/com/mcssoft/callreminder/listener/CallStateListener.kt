@@ -1,10 +1,14 @@
-package com.mcssoft.callreminder
+package com.mcssoft.callreminder.listener
 
 import android.content.Context
 import android.telephony.PhoneStateListener
 import android.telephony.TelephonyManager
+import com.mcssoft.callreminder.CallAlarmManager
 import com.mcssoft.callreminder.util.Constants
 
+/**
+ * Class to listen to the phone state and detect any changes.
+ */
 class CallStateListener(private var context: Context) : PhoneStateListener() {
 
     override fun onCallStateChanged(state: Int, phoneNumber: String) {

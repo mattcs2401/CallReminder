@@ -8,6 +8,9 @@ import com.mcssoft.callreminder.receiver.AlarmReceiver
 import com.mcssoft.callreminder.util.Constants
 import com.mcssoft.callreminder.util.SingletonHolder
 
+/**
+ * Singleton wrapper for AlarmManager.
+ */
 class CallAlarmManager private constructor(context: Context) {
 
     private var context: Context? = null              // this should be application context, not activity context etc.
@@ -27,14 +30,15 @@ class CallAlarmManager private constructor(context: Context) {
         intent.putExtra(Constants.KEY_ALARM_TYPE, Constants.ALARM_TYPE_CALL)
         intent.putExtra(Constants.KEY_PH_NO, phoneNumber)
 
-        val alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
+        alarmIntent = PendingIntent.getBroadcast(context, 0, intent, 0)
 
         alarmManager?.setInexactRepeating(AlarmManager.RTC_WAKEUP,
             System.currentTimeMillis() + Constants.ONE_MINUTE, Constants.ONE_MINUTE, alarmIntent)
     }
 
-    fun cancelAlarm(alarmIntent: PendingIntent) {
+    fun cancelAlarm() {
         alarmManager?.cancel(alarmIntent)
     }
 
+    private lateinit var alarmIntent: PendingIntent
 }
